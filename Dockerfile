@@ -1,17 +1,13 @@
-# Usa la imagen oficial de Shiny Server
+# Imagen oficial de Shiny Server
 FROM rocker/shiny:latest
 
-# Instala únicamente shiny (ya viene incluido en la imagen base, pero lo aseguramos)
-RUN R -e "install.packages('shiny', repos='https://cloud.r-project.org/')"
+# Copiar tu app.R al directorio por defecto de Shiny Server
+COPY app.R /srv/shiny-server/app/app.R
 
-# Copia tu aplicación al contenedor
-# Supongamos que tu app está en la carpeta actual con el archivo app.R
-COPY ./app.R /srv/shiny-server/app/app.R
-
-# Cambia permisos para que Shiny pueda acceder
+# Dar permisos al usuario shiny
 RUN chown -R shiny:shiny /srv/shiny-server
 
-# Expone el puerto por defecto de Shiny Server
+# Exponer el puerto de Shiny Server
 EXPOSE 3838
 
 # Comando de inicio
