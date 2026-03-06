@@ -2,6 +2,124 @@
 library(shiny)
 
 ui <- fluidPage(
+  tags$head(
+    tags$style(HTML("
+      /* --- Ajustes generales de texto y colores --- */
+      body {
+        font-size: 18px;
+        line-height: 1.45;
+        background-color: #f9f9f9;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      h1, h2, h3, h4 {
+        color: #003366;
+        font-weight: 700;
+        margin-top: 0.6em;
+        margin-bottom: 0.4em;
+      }
+
+      table, th, td, label, .control-label {
+        font-size: 17px;
+      }
+
+      /* --- Forzar ancho completo de pantalla (ideal para Zoom) --- */
+      .container-fluid {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin: 0 auto !important;
+      }
+
+      .tab-content, .content {
+        padding: 20px 24px;
+        margin: 0 !important;
+      }
+
+      /* --- Mejoras visuales para iframes y formularios --- */
+      iframe {
+        border-radius: 12px;
+        min-height: 450px;
+        width: 100% !important;
+      }
+
+      .shiny-input-container input,
+      .shiny-input-container textarea {
+        font-size: 17px !important;
+      }
+
+      /* --- Pestañas más anchas --- */
+      .nav-tabs {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      /* === PALETA VISUAL PARA VIDEOLLASE === */
+
+/* Fondo general: blanco cálido (no puro) */
+body {
+  background-color: #f5f7fa !important; /* azul muy claro */
+  color: #222222;                       /* texto gris oscuro legible */
+}
+
+/* Paneles y cajas */
+.well, .panel, .card, .sidebar-panel {
+  background-color: #ffffffcc;  /* blanco con un poco de transparencia */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+}
+
+/* Botones */
+.btn {
+  background-color: #007bff !important;  /* azul intenso */
+  color: white !important;
+  border: none !important;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #0056b3 !important;  /* tono más oscuro al pasar el mouse */
+}
+
+/* Inputs, selectores, áreas de texto */
+input, textarea, select {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+/* Encabezados */
+h1, h2, h3, h4 {
+  color: #003366; /* azul institucional */
+}
+
+/* Pestañas */
+.nav-tabs > li > a {
+  background-color: #e9eef5;
+  color: #003366;
+  border-radius: 6px 6px 0 0;
+  font-weight: 600;
+}
+.nav-tabs > li.active > a {
+  background-color: #ffffff;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+/* Tab content */
+.tab-content {
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+    "))
+  ),
   titlePanel("Cadenas globales y trabajo rural: Arándanos en Uruguay - Alberto Riella, Mauricio Tubío y Rosario Lombardo"),br(),br(),
   
   tabsetPanel(
