@@ -121,7 +121,22 @@ h1, h2, h3, h4 {
     "))
   ),
   titlePanel("Cadenas globales y trabajo rural: Arándanos en Uruguay - Alberto Riella, Mauricio Tubío y Rosario Lombardo"),br(),br(),
-  
+  tags$a(
+    href = "https://www.colibri.udelar.edu.uy/jspui/handle/20.500.12008/6840",
+    target = "_blank",
+    class = "btn",
+    style = "
+    background-color:#CB181D;
+    color:white;
+    border:none;
+    font-weight:bold;
+    padding:10px 18px;
+    font-size:16px;
+  ",
+    icon("external-link-alt"),
+    " Ver Investigación Académica"
+  ),
+  br(),br(),
   tabsetPanel(
     tabPanel("Resumen",
              h3("Resumen"),
